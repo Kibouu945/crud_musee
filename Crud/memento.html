@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Memento CRUD</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+
+<table class="container mt-4 table table-striped">
+	<thead class="thead-dark">
+	<tr>
+		<th scope="col">Table</th>
+		<th scope="col">Requete</th>
+		<th scope="col">Paramètres PHP</th>
+		<th scope="col">Submit</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th class="text-center align-middle" rowspan="4" scope="row">Moment</th>
+		<td>GET</td>
+		<td>Any</td>
+		<td>get_moment</td>
+	</tr>
+	<tr>
+		<td>POST</td>
+		<td>date</td>
+		<td>add_jour</td>
+	</tr>
+	<tr>
+		<td>UPDATE</td>
+		<td>old_date, new_date</td>
+		<td>update_jour</td>
+	</tr>
+	<tr>
+		<td>DELETE</td>
+		<td>date</td>
+		<td>delete_jour</td>
+	</tr>
+
+	<tr>
+		<th class="text-center align-middle" rowspan="4" scope="row">Pays</th>
+		<td>GET</td>
+		<td>Any</td>
+		<td>get_pays</td>
+	</tr>
+	<tr>
+		<td>POST</td>
+		<td>codePays, nbhabitants</td>
+		<td>add_pays</td>
+	</tr>
+	<tr>
+		<td>UPDATE</td>
+		<td>codePays, nbhabitants</td>
+		<td>update_pays</td>
+	</tr>
+	<tr>
+		<td>DELETE</td>
+		<td>codePays</td>
+		<td>delete_pays</td>
+	</tr>
+
+	<tr>
+		<th class="text-center align-middle" rowspan="4" scope="row">Musee</th>
+		<td>GET</td>
+		<td>Any</td>
+		<td>get_musee</td>
+	</tr>
+	<tr>
+		<td>POST</td>
+		<td>nomMusee, nblivres, codePays</td>
+		<td>add_musee</td>
+	</tr>
+	<tr>
+		<td>UPDATE</td>
+		<td>numMus, nomMusee, codePays, nblivres</td>
+		<td>update_musee</td>
+	</tr>
+	<tr>
+		<td>DELETE</td>
+		<td>numMus</td>
+		<td>delete_musee</td>
+	</tr>
+
+	<tr>
+		<th class="text-center align-middle" rowspan="4" scope="row">Ouvrage</th>
+		<td>GET</td>
+		<td>Any</td>
+		<td>get_ouvrage</td>
+	</tr>
+	<tr>
+		<td>POST</td>
+		<td>isbn, nbpages, titreouvrage, codePays</td>
+		<td>add_ouvrage</td>
+	</tr>
+	<tr>
+		<td>UPDATE</td>
+		<td>isbn, nbpages, titreouvrage, codePays</td>
+		<td>update_ouvrage</td>
+	</tr>
+	<tr>
+		<td>DELETE</td>
+		<td>isbn</td>
+		<td>delete_ouvrage</td>
+	</tr>
+
+	<tr>
+		<th class="text-center align-middle" rowspan="4" scope="row">Site</th>
+		<td>GET</td>
+		<td>Any</td>
+		<td>get_site</td>
+	</tr>
+	<tr>
+		<td>POST</td>
+		<td>nomSite, anneedecouv, codePays</td>
+		<td>add_site</td>
+	</tr>
+	<tr>
+		<td>UPDATE</td>
+		<td>oldNomSite, newNomSite, anneedecouv, codePays</td>
+		<td>update_site</td>
+	</tr>
+	<tr>
+		<td>DELETE</td>
+		<td>nomSite</td>
+		<td>delete_site</td>
+	</tr>
+
+	<tr>
+		<th class="text-center align-middle" rowspan=4" scope="row">Bibliotheque</th>
+		<td>GET</td>
+		<td>Any</td>
+		<td>get_bibliotheque</td>
+	</tr>
+	<tr>
+		<td>POST</td>
+		<td>date_achat, isbn, numMus</td>
+		<td>add_bibliotheque</td>
+	</tr>
+	<tr>
+		<td>UPDATE</td>
+		<td>id_bibliotheque, date_achat, isbn, numMus</td>
+		<td>update_bibliotheque</td>
+	</tr>
+	<tr>
+		<td>DELETE</td>
+		<td>id_bibliotheque</td>
+		<td>delete_bibliotheque</td>
+	</tr>
+
+	<tr>
+		<th class="text-center align-middle" rowspan="4" scope="row">Référencer</th>
+		<td>GET</td>
+		<td></td>
+		<td>get_referencer</td>
+	</tr>
+	<tr>
+		<td>POST</td>
+		<td>numPage, isbn, nomSite</td>
+		<td>add_referencer</td>
+	</tr>
+	<tr>
+		<td>UPDATE</td>
+		<td>id_referencer, numPage, isbn, nomSite</td>
+		<td>update_referencer</td>
+	</tr>
+	<tr>
+		<td>DELETE</td>
+		<td>id_referencer</td>
+		<td>delete_referencer</td>
+	</tr>
+
+	<tr>
+		<th class="text-center align-middle" rowspan="4" scope="row">visiter</th>
+		<td>GET</td>
+		<td>Any</td>
+		<td>get_visiter</td>
+	</tr>
+	<tr>
+		<td>POST</td>
+		<td>nbvisiteur, numMus, jour</td>
+		<td>add_visiter</td>
+	</tr>
+	<tr>
+		<td>UPDATE</td>
+		<td>id_visiter, nbvisiteur, numMus, jour</td>
+		<td>update_visiter</td>
+	</tr>
+	<tr>
+		<td>DELETE</td>
+		<td>id_visiter</td>
+		<td>delete_visiter</td>
+	</tr>
+	</tbody>
+</table>
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
